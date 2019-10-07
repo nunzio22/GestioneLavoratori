@@ -23,7 +23,13 @@ namespace GestioneLavoratori
             }
         }
 
-
+        public virtual string GetDettaglioLavoratore()
+        {
+            return Nome + System.Environment.NewLine
+            + Cognome + System.Environment.NewLine
+            + Età + System.Environment.NewLine
+            + DataDiNasciata + System.Environment.NewLine;
+        }
 
 
 

@@ -27,8 +27,13 @@ namespace GestioneLavoratori
                 return StipendioLord-ris;
             }
         }
-        public DateTime DataAssunzione { get; set; }
-
+        public int DipendentiAssunti { get; set; }
+        public override string GetDettaglioLavoratore()
+        {
+            return base.GetDettaglioLavoratore() + Environment.NewLine
+                + StipendioNet + Environment.NewLine
+                + DipendentiAssunti;
+        }
         public override int Tasse()
         {
            if(StipendioAnn<50000)

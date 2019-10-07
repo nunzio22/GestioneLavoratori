@@ -8,7 +8,12 @@ namespace GestioneLavoratori
 {
     class LavoratoreDipendete : Lavoratore
     {
-
+        enum Tipo
+        {
+            Operario,
+            Impiegato,
+            Dirigente
+        }
         public int StipendioAnn { get; set; }
         public int StipendioLord
         {
@@ -28,8 +33,14 @@ namespace GestioneLavoratori
             }
         }
         public DateTime DataAssunzione { get; set; }
+        //public Tipo livel { get; set; }
 
-
+        public override string GetDettaglioLavoratore()
+        {
+            return base.GetDettaglioLavoratore() + Environment.NewLine
+                + StipendioNet + Environment.NewLine
+                + DataAssunzione;
+        }
         public override int Tasse()
         {
             if (StipendioAnn < 6000)
