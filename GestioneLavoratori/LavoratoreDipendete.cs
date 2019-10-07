@@ -14,14 +14,17 @@ namespace GestioneLavoratori
         {
             get
             {
-                return 1;
+                return StipendioAnn/12;
             }
         }
         public int StipendioNet
         {
             get
             {
-                return 1;
+                int tass = Tasse();
+                int ris = StipendioLord / 100;
+                ris *= tass;
+                return StipendioLord - ris;
             }
         }
         public DateTime DataAssunzione { get; set; }
@@ -29,7 +32,15 @@ namespace GestioneLavoratori
 
         public override int Tasse()
         {
-            throw new NotImplementedException();
+            if (StipendioAnn < 6000)
+                return 0;
+            else if (StipendioAnn < 15000)
+                return 15;
+            else if (StipendioAnn < 25000)
+                return 30;
+            else if (StipendioAnn < 35000)
+                return 40;
+            else return 50;
         }
     }
 }
