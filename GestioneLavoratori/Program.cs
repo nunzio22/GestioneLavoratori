@@ -54,11 +54,11 @@ namespace GestioneLavoratori
                 }
                 else if (ric == "3")
                 {
-
+                    Ricerca.OrdinamentoSti(lav);
                 }
                 else if (ric == "4")
                 {
-
+                    Ricerca.OrdinamentoAnn(lav);
                 }
                 else if (ric == "5")
                 {

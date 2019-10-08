@@ -37,6 +37,10 @@ namespace GestioneLavoratori
         {
             return Nome+ Environment.NewLine+" :";
         }
+        public Lavoratore()
+        {
+
+        }
 
 
         public abstract int Tasse();
