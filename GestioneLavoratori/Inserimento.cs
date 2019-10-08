@@ -109,13 +109,13 @@ namespace GestioneLavoratori
                 DataAssunzione = new DateTime(1998, 5, 22)
             };
 
-            a[2] = new LavoratoreDipendete()
+            a[2] = new LavoratoreAutonomo()
             {
                 Nome = "Alberto",
                 Cognome = "Gambino",
-                DataDiNasciata = new DateTime(1996, 12, 29),
-                StipendioAnn = 70000,
-                DataAssunzione = DateTime.Now
+                DataDiNasciata = new DateTime(1979, 12, 29),
+                StipendioAnn = 70000
+                
             };
         }
     }

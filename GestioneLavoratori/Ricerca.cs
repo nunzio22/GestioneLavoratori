@@ -86,6 +86,7 @@ namespace GestioneLavoratori
 
         public static void OrdinamentoAnn(Lavoratore[] lav)
         {
+            // arrey oggetto lavoratore dipendente
             LavoratoreDipendete[] ord = new LavoratoreDipendete[30];
             for (int i = 0; i < lav.Length; i++)
             {

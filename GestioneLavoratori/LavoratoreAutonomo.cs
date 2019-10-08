@@ -36,7 +36,8 @@ namespace GestioneLavoratori
         }
         public override string GetDettaglioStipendio()
         {
-            return StipendioNet + "$" + Environment.NewLine;
+            return base.GetDettaglioStipendio()+
+                StipendioNet + "$" + Environment.NewLine;
         }
         public override int Tasse()
         {
