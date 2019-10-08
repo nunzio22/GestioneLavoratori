@@ -23,7 +23,7 @@ namespace GestioneLavoratori
                     return anno;
             }
         }
-
+        //lettura dettagli lavoratore 
         public virtual string GetDettaglioLavoratore()
         {
             return 
@@ -32,7 +32,7 @@ namespace GestioneLavoratori
             "Età : "+ Età + Environment.NewLine+
             "Data di Nascita : "+ DataDiNasciata + Environment.NewLine;
         }
-
+        //lettura dettagli stipendio
         public virtual string GetDettaglioStipendio()
         {
             return Nome+ Environment.NewLine+" :";

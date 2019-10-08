@@ -51,7 +51,7 @@ namespace GestioneLavoratori
                 } while (!Int32.TryParse(insert, out a));
                 lav[i].StipendioAnn = a;
                 //si chiede al utente se desidera fare altre operazioni 
-                Console.WriteLine("Vuoi vare altre operazioni?");
+                Console.WriteLine("Vuoi inserire altri utenti?");
                 tem = Console.ReadLine().ToUpper();
                 //se risponde di si il codice continua se risponde in altro modo tramite il brek esce dal do whille ponendo fine al esecuzione
                 if ((tem == "SI"))
@@ -98,18 +98,18 @@ namespace GestioneLavoratori
                 Cognome = "Pellegrini",
                 DataDiNasciata = new DateTime(1988, 05, 25),
                 StipendioAnn = 50000,
-                DataAssunzione = DateTime.Now
-            };
+                DataAssunzione = new DateTime(1983, 7, 3)
+        };
             a[1] = new LavoratoreDipendete()
             {
                 Nome = "Nunzio",
                 Cognome = "prova",
                 DataDiNasciata = new DateTime(2000, 05, 22),
                 StipendioAnn = 25000,
-                DataAssunzione = DateTime.Now
+                DataAssunzione = new DateTime(1998, 5, 22)
             };
 
-            a[3] = new LavoratoreDipendete()
+            a[2] = new LavoratoreDipendete()
             {
                 Nome = "Alberto",
                 Cognome = "Gambino",

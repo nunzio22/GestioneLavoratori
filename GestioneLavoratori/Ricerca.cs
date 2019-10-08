@@ -86,7 +86,36 @@ namespace GestioneLavoratori
 
         public static void OrdinamentoAnn(Lavoratore[] lav)
         {
+            LavoratoreDipendete[] ord = new LavoratoreDipendete[30];
+            for (int i = 0; i < lav.Length; i++)
+            {
+                if (!(lav[i] == null))
+                {
+                    if(lav[i] is LavoratoreDipendete)
+                        ord[i] = (LavoratoreDipendete)lav[i];
+                }
+            }
+            int indi = NumeroElementi(ord);
+            DateTime[] v = new DateTime[indi];
+            for (int y = 0; y < v.Length; y++)
+            {
+                v[y] = ord[y].DataAssunzione;
+            }
+            Array.Sort(v);
+            v = v.Distinct().ToArray();
 
+            for (int i = 0; i < v.Length; i++)
+            {
+                for (int y = 0; y < ord.Length; y++)
+                {
+                    if (!(ord[y] == null))
+                    {
+                        //stampo in ordiene di ord i vari dettagli stipendio
+                        if (v[i] == ord[y].DataAssunzione)
+                            Console.WriteLine(ord[y].GetDettaglioLavoratore());
+                    }
+                }
+            }
         }
         //cerca il nome dentro il campo nome dei vari oggetti del arrey e lo stapa a scermo
         internal static void RicercaNome(string ric, Lavoratore[] lav)

@@ -17,6 +17,7 @@ namespace GestioneLavoratori
             string ric;
             do
             {
+                // selezione ciò che si vuole fare
                 Console.WriteLine(
                     "1 Stipendio mensile del lavoratore : "+ Environment.NewLine
                     +"2 Lista dei lavoratori inseriti"+ Environment.NewLine
@@ -24,16 +25,20 @@ namespace GestioneLavoratori
                     +"4 Ordinamento dei lavoratori per anzianita"+Environment.NewLine
                     +"5 Inserimernto nuovo lavoratore : "+ Environment.NewLine);
                 ric=Console.ReadLine();
+                // serie di if di controllo su ciò che si è scelto
                 if (ric=="1")
                 {
+                    //altra richiesta di 
                     Console.WriteLine("1 Stipendio tramite nome(Nome)" + Environment.NewLine
                                        +"2 Un numero di persone del quale si vuole vedere lo stipendio(Numero)" + Environment.NewLine
                                        +"3 Stipendio di tutti i lavoratori (Tutti) ");
+                    //altro contorllo di richiesta
                     ric = Console.ReadLine().ToUpper();
                     if(ric=="1"||ric=="NOME")
                     {
                         Console.WriteLine("Inserire il nome del quale si vuole vedere lo stipendio : ");
                         ric = Console.ReadLine().ToUpper();
+                        //metodo che stampa il nome e stipendio della persona cercata dal utente
                         Ricerca.RicercaNome(ric, lav);
                     }
                     else if (ric == "2"||ric=="NUMERO")
