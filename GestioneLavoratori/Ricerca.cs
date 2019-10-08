@@ -87,8 +87,8 @@ namespace GestioneLavoratori
             {
                 v[y] = ord[y].DataAssunzione;
             }
-            Array.Sort(v);
             v = v.Distinct().ToArray();
+            Array.Sort(v);
 
             for (int i = 0; i < v.Length; i++)
             {
