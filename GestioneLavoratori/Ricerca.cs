@@ -65,22 +65,7 @@ namespace GestioneLavoratori
             }
             //faccio una sorte di distint sul arrey
             ord = ord.Distinct().ToArray();
-            int i;
-            int j;
-            int temp;
-            //riordiono larrey
-            for (i = (ord.Length - 1); i >= 0; i--)
-            {
-                for (j = 1; j <= i; j++)
-                {
-                    if (ord[j - 1] > ord[j])
-                    {
-                        temp = ord[j - 1];
-                        ord[j - 1] = ord[j];
-                        ord[j] = temp;
-                    }
-                }
-            }
+            Array.Sort(ord);
             return ord;
         }
 
