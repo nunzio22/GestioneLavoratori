@@ -11,6 +11,7 @@ namespace GestioneLavoratori
         public string Nome { get; set; }
         public string Cognome { get; set; }
         public DateTime DataDiNasciata { get; set; }
+        public int StipendioAnn { get; set; }
         public int Età
         {
             get
@@ -25,10 +26,11 @@ namespace GestioneLavoratori
 
         public virtual string GetDettaglioLavoratore()
         {
-            return Nome + System.Environment.NewLine
-            + Cognome + System.Environment.NewLine
-            + Età + System.Environment.NewLine
-            + DataDiNasciata + System.Environment.NewLine;
+            return 
+            "Nome : "+ Nome + System.Environment.NewLine+
+            "Cognome : "+ Cognome + System.Environment.NewLine+
+            "Età : "+ Età + System.Environment.NewLine+
+            "Data di Nascita : "+ DataDiNasciata + System.Environment.NewLine;
         }
 
 

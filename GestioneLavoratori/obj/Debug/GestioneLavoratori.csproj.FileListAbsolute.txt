@@ -1,0 +1,7 @@
+C:\Users\CORSO 46\Documents\GitHub\GestioneLavoratori\GestioneLavoratori\obj\Debug\GestioneLavoratori.csprojAssemblyReference.cache
+C:\Users\CORSO 46\Documents\GitHub\GestioneLavoratori\GestioneLavoratori\obj\Debug\GestioneLavoratori.csproj.CoreCompileInputs.cache
+C:\Users\CORSO 46\Documents\GitHub\GestioneLavoratori\GestioneLavoratori\bin\Debug\GestioneLavoratori.exe.config
+C:\Users\CORSO 46\Documents\GitHub\GestioneLavoratori\GestioneLavoratori\bin\Debug\GestioneLavoratori.exe
+C:\Users\CORSO 46\Documents\GitHub\GestioneLavoratori\GestioneLavoratori\bin\Debug\GestioneLavoratori.pdb
+C:\Users\CORSO 46\Documents\GitHub\GestioneLavoratori\GestioneLavoratori\obj\Debug\GestioneLavoratori.exe
+C:\Users\CORSO 46\Documents\GitHub\GestioneLavoratori\GestioneLavoratori\obj\Debug\GestioneLavoratori.pdb

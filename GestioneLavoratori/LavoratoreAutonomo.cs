@@ -9,7 +9,7 @@ namespace GestioneLavoratori
     class LavoratoreAutonomo : Lavoratore
     {
 
-        public int StipendioAnn { get; set; }
+        
         public int StipendioLord
         {
             get
@@ -30,9 +30,9 @@ namespace GestioneLavoratori
         public int DipendentiAssunti { get; set; }
         public override string GetDettaglioLavoratore()
         {
-            return base.GetDettaglioLavoratore() + Environment.NewLine
-                + StipendioNet + Environment.NewLine
-                + DipendentiAssunti;
+            return base.GetDettaglioLavoratore() +
+                "Stipendio Mensile percepito : " + StipendioNet + Environment.NewLine+
+                "Dipendenti assunti : "+ DipendentiAssunti + Environment.NewLine;
         }
         public override int Tasse()
         {

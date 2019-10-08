@@ -8,13 +8,6 @@ namespace GestioneLavoratori
 {
     class LavoratoreDipendete : Lavoratore
     {
-        enum Tipo
-        {
-            Operario,
-            Impiegato,
-            Dirigente
-        }
-        public int StipendioAnn { get; set; }
         public int StipendioLord
         {
             get
@@ -37,9 +30,9 @@ namespace GestioneLavoratori
 
         public override string GetDettaglioLavoratore()
         {
-            return base.GetDettaglioLavoratore() + Environment.NewLine
-                + StipendioNet + Environment.NewLine
-                + DataAssunzione;
+            return base.GetDettaglioLavoratore() +
+                "Stipendio Mensile percepito : "+ StipendioNet +"$"+ Environment.NewLine+
+                "Data di assunzione : "+ DataAssunzione+Environment.NewLine;
         }
         public override int Tasse()
         {
