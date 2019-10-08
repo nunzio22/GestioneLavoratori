@@ -71,7 +71,7 @@ namespace GestioneLavoratori
 
         public static void OrdinamentoAnn(Lavoratore[] lav)
         {
-            // arrey oggetto lavoratore dipendente
+            // arrey oggetto lavoratore dipendente popolato con il for
             LavoratoreDipendete[] ord = new LavoratoreDipendete[30];
             for (int i = 0; i < lav.Length; i++)
             {
@@ -81,15 +81,19 @@ namespace GestioneLavoratori
                         ord[i] = (LavoratoreDipendete)lav[i];
                 }
             }
+            //lunghezza del arrey di oggetti lavoratore dipendenti
             int indi = NumeroElementi(ord);
+            //creazione arrey di tipo data popolato con la data di assunzione degli oggetti persona del arrey ord
             DateTime[] v = new DateTime[indi];
             for (int y = 0; y < v.Length; y++)
             {
                 v[y] = ord[y].DataAssunzione;
             }
+            // distint degli elementi arrey
             v = v.Distinct().ToArray();
+            //ordinamteo data assunzione
             Array.Sort(v);
-
+            //stampa tramite ord e v i lavoratori in ordine da data di assunzione
             for (int i = 0; i < v.Length; i++)
             {
                 for (int y = 0; y < ord.Length; y++)
