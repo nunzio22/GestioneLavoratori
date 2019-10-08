@@ -21,7 +21,16 @@ namespace GestioneLavoratori
 
         public static void OrdinamentoSti(Lavoratore [] lav)
         {
+            for (int i = 0; i < lav.Length; i++)
+            {
+                for (int j = 0; j < lav.Length; j++)
+                {
+                    if(lav[i].StipendioAnn>lav[j].StipendioAnn)
+                    {
 
+                    }
+                }
+            }
         }
         public static void OrdinamentoAnn(Lavoratore[] lav)
         {
