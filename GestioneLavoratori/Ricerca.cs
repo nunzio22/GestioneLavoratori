@@ -27,5 +27,33 @@ namespace GestioneLavoratori
         {
 
         }
+
+        internal static void RicercaNome(string ric, Lavoratore[] lav)
+        {
+            for (int i = 0; i < lav.Length; i++)
+            {
+                if (!(lav[i] == null))
+                {
+                    if (lav[i].Nome.ToUpper() == ric)
+                    {
+                        Console.WriteLine(lav[i].GetDettaglioStipendio());
+                    }
+                }
+            }
+        }
+        internal static void RicercaNum(int n, Lavoratore[] lav)
+        {
+            for (int i = 0; i < lav.Length; i++)
+            {
+                if (!(lav[i] == null))
+                {
+                    Console.WriteLine(lav[i].GetDettaglioStipendio());
+                    if (i+1 == n)
+                        break;
+                }
+            }
+
+        }
+
     }
 }

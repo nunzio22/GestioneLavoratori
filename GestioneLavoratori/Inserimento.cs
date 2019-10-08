@@ -73,6 +73,22 @@ namespace GestioneLavoratori
             }
             return 0;
         }
+        public static int insertN()
+        {
+            //creazioni delle variabili necessarie per l'inserimento
+            string temp;
+            int num1;
+            do
+            {
+                Console.WriteLine("Inserisci il numero e premi invio");
+                temp = Console.ReadLine();
+                if (!Int32.TryParse(temp, out num1))
+                {
+                    Console.WriteLine("Il valore inserito non è corretto quindi rinserisci");
+                }
+            } while (!Int32.TryParse(temp, out num1));
+            return num1;
+        }
 
         public static void Prova(Lavoratore [] a)
         {

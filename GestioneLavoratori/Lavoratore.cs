@@ -27,13 +27,16 @@ namespace GestioneLavoratori
         public virtual string GetDettaglioLavoratore()
         {
             return 
-            "Nome : "+ Nome + System.Environment.NewLine+
-            "Cognome : "+ Cognome + System.Environment.NewLine+
-            "Età : "+ Età + System.Environment.NewLine+
-            "Data di Nascita : "+ DataDiNasciata + System.Environment.NewLine;
+            "Nome : "+ Nome + Environment.NewLine+
+            "Cognome : "+ Cognome + Environment.NewLine+
+            "Età : "+ Età + Environment.NewLine+
+            "Data di Nascita : "+ DataDiNasciata + Environment.NewLine;
         }
 
-
+        public virtual string GetDettaglioStipendio()
+        {
+            return Nome+ Environment.NewLine+" :";
+        }
 
 
         public abstract int Tasse();

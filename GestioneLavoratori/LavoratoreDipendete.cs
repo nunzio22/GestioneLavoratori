@@ -34,6 +34,12 @@ namespace GestioneLavoratori
                 "Stipendio Mensile percepito : "+ StipendioNet +"$"+ Environment.NewLine+
                 "Data di assunzione : "+ DataAssunzione+Environment.NewLine;
         }
+        public override string GetDettaglioStipendio()
+        {
+            return base.GetDettaglioStipendio()+ 
+                StipendioNet+"$" + Environment.NewLine;
+        }
+
         public override int Tasse()
         {
             if (StipendioAnn < 6000)
