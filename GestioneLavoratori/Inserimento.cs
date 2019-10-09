@@ -16,7 +16,6 @@ namespace GestioneLavoratori
             bool fine;
             string nome, cognome;
             int stipendioAnn;
-            string insert;
             do
             {
                 //creazione utnete si chiede di che tipologia deve essere l'utente per poterlo creare di quel tipo
@@ -29,41 +28,51 @@ namespace GestioneLavoratori
                 //si inseriscono i dati personali su varibile provissorie
                 Console.WriteLine("Nome lavoratore : ");
                 nome = Console.ReadLine();
-                i = Libero(lav);
                 Console.WriteLine("Cognome lavoratore : ");
                 cognome = Console.ReadLine();
                 stipendioAnn = insertN("lo stipendio annuale");
                 //dentro if lacia un metodo che ritorna un buleano di tipo false se allinterno del utente essiste già il lavoratore
-                if(Controllo.controlloLavoratore(nome, cognome, stipendioAnn,lav))
+                i = Libero(lav);
+                if (i != 0)
                 {
-                    //crea l'oggeto del tipo inserito e gli da i parametri inseriti in precedenza
-                    tem = tem.ToUpper();
-                    if (tem == "1" || tem == "LAVORATORE DIPENDENTE")
-                    { 
-                        lav[i] = new LavoratoreDipendete();
-                        //solo per aggiungere lo spazio alla fine della crazione
-                        Console.WriteLine("");
-                    }
-                    else if (tem == "2" || tem == "LAVORATORE AUTONOMO")
+                    if (Controllo.controlloLavoratore(nome, cognome, stipendioAnn, lav))
                     {
-                        lav[i] = new LavoratoreAutonomo();
-                        Console.WriteLine("");
-                    }
+                        //controllo la posizione liberea del arrey
 
-                    lav[i].Nome = nome;
-                    lav[i].Cognome = cognome;
-                    lav[i].StipendioAnn = stipendioAnn;
+                        //crea l'oggeto del tipo inserito e gli da i parametri inseriti in precedenza
+                        tem = tem.ToUpper();
+                        if (tem == "1" || tem == "LAVORATORE DIPENDENTE")
+                        {
+                            lav[i] = new LavoratoreDipendete();
+                            //solo per aggiungere lo spazio alla fine della crazione
+                            Console.WriteLine("");
+                        }
+                        else if (tem == "2" || tem == "LAVORATORE AUTONOMO")
+                        {
+                            lav[i] = new LavoratoreAutonomo();
+                            Console.WriteLine("");
+                        }
+
+                        lav[i].Nome = nome;
+                        lav[i].Cognome = cognome;
+                        lav[i].StipendioAnn = stipendioAnn;
+                    }
+                    else
+                    {
+                        //se l'utete è si manda il messaggio nel quale si specifaca che il lavoratore non può essere inserito
+                        Console.WriteLine("Utente già allinterno del 'DB' imposibile rinserirlo");
+                    }
                 }
                 else
                 {
-                    //se l'utete è si manda il messaggio nel quale si specifaca che il lavoratore non può essere inserito
-                    Console.WriteLine("Utente già allinterno del 'DB' imposibile rinserirlo");
+                    Console.WriteLine("Inseriti i numeri massimo di lavoratori impossibile aggiungere altri lavorator");
+                    break;
                 }
-                fine = Controllo.altreOprezioni();
+              fine = Controllo.altreOprezioni();
             } while (fine);
         }
         //gira gli elementi finche non ne trova uno libero in questo caso visto che si dubita che lutente inserisca
-        //più di 27 lavorotori non è neccessaro controllorare se si esce della grandezza del arrey
+        
         private static int Libero(Lavoratore[] lav)
         {
             for (int i = 0; i < lav.Length; i++)
