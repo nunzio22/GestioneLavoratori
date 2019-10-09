@@ -15,7 +15,7 @@ namespace GestioneLavoratori
             {
                 if (!(lav[i] == null))
                 {
-                    Console.WriteLine(lav[i].GetDettaglioLavoratore());
+                    Console.WriteLine(lav[i]);
                 }
             }
         }
@@ -102,7 +102,7 @@ namespace GestioneLavoratori
                     {
                         //stampo in ordiene di ord i vari dettagli stipendio
                         if (v[i] == ord[y].DataAssunzione)
-                            Console.WriteLine(ord[y].GetDettaglioLavoratore());
+                            Console.WriteLine(ord[y]);
                     }
                 }
             }
@@ -137,6 +137,7 @@ namespace GestioneLavoratori
             }
 
         }
+        
 
     }
 }

@@ -50,7 +50,7 @@ namespace GestioneLavoratori
                     }
                     else if (ric == "3"||ric=="TUTTI")
                     {
-                        Ricerca.RicercaNum(30, lav);
+                        Ricerca.RicercaNum(lav.Length, lav);
                     }
                 }
                 else if (ric=="2")

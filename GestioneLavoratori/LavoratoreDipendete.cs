@@ -28,11 +28,12 @@ namespace GestioneLavoratori
         public DateTime DataAssunzione { get; set; }
         //public Tipo livel { get; set; }
 
-        public override string GetDettaglioLavoratore()
+   
+        public override string ToString()
         {
-            return base.GetDettaglioLavoratore() +
-                "Stipendio Mensile percepito : "+ StipendioNet +"$"+ Environment.NewLine+
-                "Data di assunzione : "+ DataAssunzione+Environment.NewLine;
+            return base.ToString() +
+                "Stipendio Mensile percepito : " + StipendioNet + "$" + Environment.NewLine +
+                "Data di assunzione : " + DataAssunzione + Environment.NewLine;
         }
         public override string GetDettaglioStipendio()
         {

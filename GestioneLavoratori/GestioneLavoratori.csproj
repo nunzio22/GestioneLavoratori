@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllo.cs" />
     <Compile Include="Inserimento.cs" />
     <Compile Include="Lavoratore.cs" />
     <Compile Include="LavoratoreAutonomo.cs" />

@@ -24,14 +24,6 @@ namespace GestioneLavoratori
             }
         }
         //lettura dettagli lavoratore 
-        public virtual string GetDettaglioLavoratore()
-        {
-            return 
-            "Nome : "+ Nome + Environment.NewLine+
-            "Cognome : "+ Cognome + Environment.NewLine+
-            "Età : "+ Età + Environment.NewLine+
-            "Data di Nascita : "+ DataDiNasciata + Environment.NewLine;
-        }
         //lettura dettagli stipendio
         public virtual string GetDettaglioStipendio()
         {
@@ -44,6 +36,13 @@ namespace GestioneLavoratori
 
 
         public abstract int Tasse();
+        public override string ToString()
+        {
+            return "Nome : " + Nome + Environment.NewLine +
+            "Cognome : " + Cognome + Environment.NewLine +
+            "Età : " + Età + Environment.NewLine +
+            "Data di Nascita : " + DataDiNasciata + Environment.NewLine;
+        }
 
     }
 }

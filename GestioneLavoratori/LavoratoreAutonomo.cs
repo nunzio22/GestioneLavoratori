@@ -28,16 +28,16 @@ namespace GestioneLavoratori
             }
         }
         public int DipendentiAssunti { get; set; }
-        public override string GetDettaglioLavoratore()
-        {
-            return base.GetDettaglioLavoratore() +
-                "Stipendio Mensile percepito : " + StipendioNet +"$"+ Environment.NewLine+
-                "Dipendenti assunti : "+ DipendentiAssunti + Environment.NewLine;
-        }
         public override string GetDettaglioStipendio()
         {
             return base.GetDettaglioStipendio()+
                 StipendioNet + "$" + Environment.NewLine;
+        }
+        public override string ToString()
+        {
+            return base.ToString() +
+                "Stipendio Mensile percepito : " + StipendioNet + "$" + Environment.NewLine +
+                "Dipendenti assunti : " + DipendentiAssunti + Environment.NewLine;
         }
         public override int Tasse()
         {
