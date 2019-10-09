@@ -32,20 +32,7 @@ namespace GestioneLavoratori
                 i = Libero(lav);
                 Console.WriteLine("Cognome lavoratore : ");
                 cognome = Console.ReadLine();
-                //controllo che lo stipendio annuale sia un intero
-                //volendo si potebebe crare un metodo della classe controllo che effetua il controllo ma 
-                //essendo che comunque per coretteza di codice dovra stampare qui non ha senso imprementarre un
-                // un metodo per due righe di codice
-                do
-                {
-                    Console.WriteLine("Inserisci lo stipendio annnuale");
-                    insert = Console.ReadLine();
-                    if (!Int32.TryParse(insert, out a))
-                    {
-                        Console.WriteLine("Il valore inserito non è corretto quindi rinserisci");
-                    }
-                } while (!Int32.TryParse(insert, out a));
-                stipendioAnn = a;
+                stipendioAnn = insertN("lo stipendio annuale");
                 //dentro if lacia un metodo che ritorna un buleano di tipo false se allinterno del utente essiste già il lavoratore
                 if(Controllo.controlloLavoratore(nome, cognome, stipendioAnn,lav))
                 {
@@ -96,14 +83,14 @@ namespace GestioneLavoratori
             }
             return 0;
         }
-        public static int insertN()
+        public static int insertN(string pr)
         {
             //creazioni delle variabili necessarie per l'inserimento
             string temp;
             int num1;
             do
             {
-                Console.WriteLine("Inserisci il numero e premi invio");
+                Console.WriteLine("Inserisci {0} e premi invio",pr);
                 temp = Console.ReadLine();
                 if (!Int32.TryParse(temp, out num1))
                 {
@@ -112,7 +99,7 @@ namespace GestioneLavoratori
             } while (!Int32.TryParse(temp, out num1));
             return num1;
         }
-
+        //creazione dei lavoratori base che ci saranno sempre
         public static void Prova(Lavoratore [] a)
         {
             a[0] = new LavoratoreDipendete()

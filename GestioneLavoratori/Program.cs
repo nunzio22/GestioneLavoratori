@@ -44,7 +44,7 @@ namespace GestioneLavoratori
                     else if (ric == "2"||ric=="NUMERO")
                     {
                         Console.WriteLine("Inserire il numero delle persone sulle quali si vuole controllare lo stipendio ");
-                        n = Inserimento.insertN();
+                        n = Inserimento.insertN("Il numero");
                         Ricerca.RicercaNum(n, lav);
 
                     }
