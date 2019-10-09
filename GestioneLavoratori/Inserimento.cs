@@ -13,7 +13,7 @@ namespace GestioneLavoratori
             string tem;
             int i=0;
             int a=0;
-            bool fine=true;
+            bool fine;
             string nome, cognome;
             int stipendioAnn;
             string insert;
@@ -59,14 +59,7 @@ namespace GestioneLavoratori
                     //se l'utete è si manda il messaggio nel quale si specifaca che il lavoratore non può essere inserito
                     Console.WriteLine("Utente già allinterno del 'DB' imposibile rinserirlo");
                 }
-                //si chiede al utente se desidera fare altre operazioni 
-                Console.WriteLine("Vuoi inserire altri utenti?");
-                tem = Console.ReadLine().ToUpper();
-                //se risponde di si il codice continua se risponde in altro modo tramite il brek esce dal do whille ponendo fine al esecuzione
-                if ((tem == "SI"))
-                    ;
-                else fine=false;
-
+                fine = Controllo.altreOprezioni();
             } while (fine);
         }
         //gira gli elementi finche non ne trova uno libero in questo caso visto che si dubita che lutente inserisca
