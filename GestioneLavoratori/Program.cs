@@ -13,6 +13,7 @@ namespace GestioneLavoratori
             Lavoratore[] lav = new Lavoratore[30];
             Inserimento.Prova(lav);
             int n;
+            bool fine;
             // creazione stringa richiesta
             string ric;
             do
@@ -69,14 +70,8 @@ namespace GestioneLavoratori
                 {
                     Inserimento.insert(lav);
                 }
-
-                Console.WriteLine("Vuoi vare altre operazioni?");
-                ric = Console.ReadLine().ToUpper();
-                //se risponde di si il codice continua se risponde in altro modo tramite il brek esce dal do whille ponendo fine al esecuzione
-                if ((ric == "SI"))
-                    ;
-                else break;
-            } while (true);
+                fine = Controllo.altreOprezioni();
+            } while (fine);
             Console.ReadLine();
 
         }

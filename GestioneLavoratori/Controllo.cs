@@ -25,5 +25,16 @@ namespace GestioneLavoratori
             }
             return ris;
         }
+        public static bool altreOprezioni()
+        {
+            bool fine=true;
+            string tem;
+            //si chiede al utente se desidera fare altre operazioni 
+            Console.WriteLine("Vuoi inserire altri utenti?");
+            tem = Console.ReadLine().ToUpper();
+            if ((tem == "SI"))
+                ;
+            else fine=false;
+        }
     }
 }

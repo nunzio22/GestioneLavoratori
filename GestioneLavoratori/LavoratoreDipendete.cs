@@ -26,9 +26,7 @@ namespace GestioneLavoratori
             }
         }
         public DateTime DataAssunzione { get; set; }
-        //public Tipo livel { get; set; }
 
-   
         public override string ToString()
         {
             return base.ToString() +
