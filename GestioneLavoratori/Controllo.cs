@@ -20,14 +20,14 @@ namespace GestioneLavoratori
         /// <param name="stipendio">stipendio del utente che si vuole inserire</param>
         /// <param name="lav">arrrey di lavoratori</param>
         /// <returns>ritorna un false se l'utente è già presente e true se non è presente </returns>
-        public static bool controlloLavoratore(string nom,string cognome,int stipendio,Lavoratore [] lav)
+        public static bool controlloLavoratore(string nom, string cognome, int stipendio, Lavoratore[] lav)
         {
             bool ris = true;
             foreach (var k in lav)
             {
-                if (k!=null&&k.Nome==nom && k.Cognome==cognome && k.StipendioAnn==stipendio)
+                if (k != null && k.Nome == nom && k.Cognome == cognome && k.StipendioAnn == stipendio)
                 {
-                    ris= false;
+                    ris = false;
                     break;
                 }
             }
@@ -39,15 +39,18 @@ namespace GestioneLavoratori
         /// <returns>ritorna true se l'utente vuole inserire altre operazioni e false se non ne vuole inserire</returns>
         public static bool altreOprezioni(string a)
         {
-            bool fine=true;
+            bool fine = true;
             string tem;
             //si chiede al utente se desidera fare altre operazioni 
-            Console.WriteLine("Vuoi {0}",a);
+            Console.WriteLine("Vuoi {0}", a);
             tem = Console.ReadLine().ToUpper();
             if ((tem == "SI"))
                 ;
-            else fine=false;
+            else fine = false;
             return fine;
         }
     }
 }
+
+
+

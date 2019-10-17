@@ -16,7 +16,6 @@ namespace GestioneLavoratori
         {
             string tem;
             int i=0;
-            int a=0;
             bool fine;
             string nome, cognome;
             int stipendioAnn;
@@ -94,26 +93,68 @@ namespace GestioneLavoratori
             return 0;
         }
         /// <summary>
-        /// l'inserimenento del numero dentro una varibile da stringa
+        /// l'inserimenento del numero dentro una varibile da stringa gestendo le varie eccezioni
         /// </summary>
         /// <param name="pr">stringa che distingue la richiesta che si vuole fare</param>
+        /// <exception cref="NumeroException"></exception>
         /// <returns>ritorna un intero scritto dal utente</returns>
+        ///    
         public static int insertN(string pr)
         {
             //creazioni delle variabili necessarie per l'inserimento
             string temp;
-            int num1;
+            int num1=0;
+            bool fine = true;
             do
             {
                 Console.WriteLine("Inserisci {0} e premi invio",pr);
                 temp = Console.ReadLine();
-                if (!Int32.TryParse(temp, out num1))
+                try
                 {
-                    Console.WriteLine("Il valore inserito non è corretto quindi rinserisci");
+                    num1 = Eccezione(temp);
+                    fine = false;
                 }
-            } while (!Int32.TryParse(temp, out num1));
+                catch (NumeroException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                
+            } while (fine);
             return num1;
         }
+        /// <summary>
+        /// distingue le varie eccezioni del inserimento di una stringa al interno di un inti
+        /// </summary>
+        /// <param name="temp">la stringa contente il valore scritto dal utente</param>
+        /// <returns>intero con il contenuto della stringra o ritorna il tipo di eccezione</returns>
+
+        private static int Eccezione(string temp)
+        {
+            int n;
+            try
+            {
+                n = Int32.Parse(temp);
+                return n;
+            }
+            catch (ArgumentNullException)
+            {
+                throw new NumeroException("Il varore è null");
+            }
+            catch (FormatException)
+            {
+                throw new NumeroException("Il varore inserito non è un intero");
+            }
+            catch (OverflowException)
+            {
+                throw new NumeroException("Il varore inserito è troppo grande");
+            }
+            catch (Exception)
+            {
+                throw new NumeroException("Il varore inserito non va bene");
+            }
+
+        }
+
         //creazione dei lavoratori base che ci saranno sempre
         /// <summary>
         /// inserimento automatico di lavoratori
