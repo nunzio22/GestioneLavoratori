@@ -8,6 +8,10 @@ namespace GestioneLavoratori
 {
     class Inserimento
     {
+        /// <summary>
+        /// insserimento di nuovi lavoratori 
+        /// </summary>
+        /// <param name="lav">arrey dove vengono inseriti i lavoratori</param>
         public static void insert(Lavoratore [] lav)
         {
             string tem;
@@ -72,8 +76,12 @@ namespace GestioneLavoratori
             } while (fine);
         }
         //gira gli elementi finche non ne trova uno libero in questo caso visto che si dubita che lutente inserisca
-        
-        private static int Libero(Lavoratore[] lav)
+        /// <summary>
+        /// gira l'arrey dei lavoratori e trova lo spazio libero
+        /// </summary>
+        /// <param name="lav">l'arrey di tipo lavoratore</param>
+        /// <returns>Il numero della cella llibera del arrey lavoratore</returns>
+        public static int Libero(Lavoratore[] lav)
         {
             for (int i = 0; i < lav.Length; i++)
             {
@@ -85,6 +93,11 @@ namespace GestioneLavoratori
             }
             return 0;
         }
+        /// <summary>
+        /// l'inserimenento del numero dentro una varibile da stringa
+        /// </summary>
+        /// <param name="pr">stringa che distingue la richiesta che si vuole fare</param>
+        /// <returns>ritorna un intero scritto dal utente</returns>
         public static int insertN(string pr)
         {
             //creazioni delle variabili necessarie per l'inserimento
@@ -102,6 +115,10 @@ namespace GestioneLavoratori
             return num1;
         }
         //creazione dei lavoratori base che ci saranno sempre
+        /// <summary>
+        /// inserimento automatico di lavoratori
+        /// </summary>
+        /// <param name="a">arrey lavoratore</param>
         public static void Prova(Lavoratore [] a)
         {
             a[0] = new LavoratoreDipendete()

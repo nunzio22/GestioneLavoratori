@@ -9,6 +9,10 @@ namespace GestioneLavoratori
     class Ricerca
     {
         //semplice lettura del dettaglio lavoratore
+        /// <summary>
+        /// lettura dei dettagli del lavoratori
+        /// </summary>
+        /// <param name="lav">arrey lavoratori</param>
         public static void Lettura(Lavoratore [] lav)
         {
             for (int i = 0; i < lav.Length; i++)
@@ -19,20 +23,10 @@ namespace GestioneLavoratori
                 }
             }
         }
-        //trova il numero di oggetti dentro arrey
-        public static int NumeroElementi(Lavoratore[] lav)
-        {
-            for (int i = 0; i < lav.Length; i++)
-            {
-                if (!(lav[i] == null))
-                    ;
-                else
-                {
-                    return i;
-                }
-            }
-            return 0;
-        }
+        /// <summary>
+        /// stampa in ordine di stipendio i dettagli stipendio
+        /// </summary>
+        /// <param name="lav">arrey lavoratori</param>
         //stampa tutti i dettagli stipendio in ordine di stipendio annuoale piu alto 
         public static void OrdinamentoSti(Lavoratore [] lav)
         {
@@ -51,11 +45,15 @@ namespace GestioneLavoratori
               }
             }
         }
-
+        /// <summary>
+        /// mi crea un arrey di int con dentro gli stipendi degli utenti 
+        /// </summary>
+        /// <param name="lav">arrey lavoratori</param>
+        /// <returns>L'arrey di stipendi</returns>
         private static int[] OrdiStip(Lavoratore [] lav)
         {
-            //mi salva il numero di oggetti al intetno del arrey e creo un arrey iìdi int di quella lunghezza
-            int indi = NumeroElementi(lav);
+            //mi salva il numero di oggetti al intetno del arrey e creo un arrey indi int di quella lunghezza
+            int indi = Inserimento.Libero(lav);
 
             int[] ord=new int [indi];
             //do come valore dei elemenri ord il vallore dello stipendio annuaole
@@ -68,7 +66,10 @@ namespace GestioneLavoratori
             Array.Sort(ord);
             return ord;
         }
-
+        /// <summary>
+        /// mi stampa i dettagli sipendio ordinati per data di assunzione
+        /// </summary>
+        /// <param name="lav">arrey lavoratori</param>
         public static void OrdinamentoAnn(Lavoratore[] lav)
         {
             // arrey oggetto lavoratore dipendente popolato con il for
@@ -82,7 +83,7 @@ namespace GestioneLavoratori
                 }
             }
             //lunghezza del arrey di oggetti lavoratore dipendenti
-            int indi = NumeroElementi(ord);
+            int indi = Inserimento.Libero(ord);
             //creazione arrey di tipo data popolato con la data di assunzione degli oggetti persona del arrey ord
             DateTime[] v = new DateTime[indi];
             for (int y = 0; y < v.Length; y++)
@@ -108,6 +109,11 @@ namespace GestioneLavoratori
             }
         }
         //cerca il nome dentro il campo nome dei vari oggetti del arrey e lo stapa a scermo
+        /// <summary>
+        /// cerca il nome dentro il campo nome dei vari oggetti del arrey e lo stapa a scermo
+        /// </summary>
+        /// <param name="ric">nome cercato dal utente</param>
+        /// <param name="lav">arrey lacoratore</param>
         internal static void RicercaNome(string ric, Lavoratore[] lav)
         {
             for (int i = 0; i < lav.Length; i++)
@@ -122,6 +128,12 @@ namespace GestioneLavoratori
                 }
             }
         }
+
+        /// <summary>
+        /// stampa i dettagli lavoratore in base al numero selezionato dal utente
+        /// </summary>
+        /// <param name="n">numero selezionato dal utente</param>
+        /// <param name="lav">arrey lavoratore</param>
         //stampa un numero di dettegli lavoratori in base a quanti ne chiede lutente se sono piu dei lavoratori esistenti gli stampa tutti
         internal static void RicercaNum(int n, Lavoratore[] lav)
         {
