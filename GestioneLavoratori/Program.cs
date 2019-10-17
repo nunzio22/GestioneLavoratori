@@ -70,9 +70,9 @@ namespace GestioneLavoratori
                 {
                     Inserimento.insert(lav);
                 }
-                fine = Controllo.altreOprezioni();
+                fine = Controllo.altreOprezioni(" effetuare altre operzioni");
             } while (fine);
-            Console.ReadLine();
+
 
         }
     }

@@ -37,12 +37,12 @@ namespace GestioneLavoratori
         /// controllo se l'utente vuole effetuare altre operazioni
         /// </summary>
         /// <returns>ritorna true se l'utente vuole inserire altre operazioni e false se non ne vuole inserire</returns>
-        public static bool altreOprezioni()
+        public static bool altreOprezioni(string a)
         {
             bool fine=true;
             string tem;
             //si chiede al utente se desidera fare altre operazioni 
-            Console.WriteLine("Vuoi inserire altri utenti?");
+            Console.WriteLine("Vuoi {0}",a);
             tem = Console.ReadLine().ToUpper();
             if ((tem == "SI"))
                 ;

@@ -72,7 +72,7 @@ namespace GestioneLavoratori
                     Console.WriteLine("Inseriti i numeri massimo di lavoratori impossibile aggiungere altri lavorator");
                     break;
                 }
-              fine = Controllo.altreOprezioni();
+              fine = Controllo.altreOprezioni("inserire altri utenti");
             } while (fine);
         }
         //gira gli elementi finche non ne trova uno libero in questo caso visto che si dubita che lutente inserisca
