@@ -25,6 +25,10 @@ namespace GestioneLavoratori
         }
         //lettura dettagli lavoratore 
         //lettura dettagli stipendio
+        /// <summary>
+        /// creo una stringa con i dettagli stipendio
+        /// </summary>
+        /// <returns>ritorno la stringa con i dettagli stipendio</returns>
         public virtual string GetDettaglioStipendio()
         {
             return Nome+ Environment.NewLine+" :";
@@ -36,6 +40,10 @@ namespace GestioneLavoratori
 
 
         public abstract int Tasse();
+        /// <summary>
+        /// è un ovveride del metodo to string 
+        /// </summary>
+        /// <returns>ritorna la stringa con tutti i dettagli del lavoratore</returns>
         public override string ToString()
         {
             return "Nome : " + Nome + Environment.NewLine +
