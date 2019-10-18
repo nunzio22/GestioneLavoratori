@@ -15,7 +15,6 @@ namespace GestioneLavoratori
         public static void insert(Lavoratore [] lav)
         {
             string tem;
-            int i=0;
             bool fine;
             string nome, cognome;
             int stipendioAnn;
@@ -35,10 +34,10 @@ namespace GestioneLavoratori
                 cognome = Console.ReadLine();
                 stipendioAnn = insertN("lo stipendio annuale");
                 //dentro if lacia un metodo che ritorna un buleano di tipo false se allinterno del utente essiste già il lavoratore
-                i = Libero(lav);
+                int i = Libero(lav);
                 if (i != 0)
                 {
-                    if (Controllo.controlloLavoratore(nome, cognome, stipendioAnn, lav))
+                    if (Controllo.ControlloLavoratore(nome, cognome, stipendioAnn, lav))
                     {
                         //controllo la posizione liberea del arrey
 
@@ -71,7 +70,7 @@ namespace GestioneLavoratori
                     Console.WriteLine("Inseriti i numeri massimo di lavoratori impossibile aggiungere altri lavorator");
                     break;
                 }
-              fine = Controllo.altreOprezioni("inserire altri utenti");
+              fine = Controllo.AltreOprezioni("inserire altri utenti");
             } while (fine);
         }
         //gira gli elementi finche non ne trova uno libero in questo caso visto che si dubita che lutente inserisca
