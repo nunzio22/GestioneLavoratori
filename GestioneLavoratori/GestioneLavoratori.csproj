@@ -43,8 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllo.cs" />
+    <Compile Include="Inserimento.cs" />
+    <Compile Include="Lavoratore.cs" />
+    <Compile Include="LavoratoreAutonomo.cs" />
+    <Compile Include="LavoratoreDipendete.cs" />
+    <Compile Include="NumeroExecption.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ricerca.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
