@@ -49,7 +49,7 @@ namespace GestioneLavoratori
             return "Nome : " + Nome + Environment.NewLine +
             "Cognome : " + Cognome + Environment.NewLine +
             "Età : " + Età + Environment.NewLine +
-            "Data di Nascita : " + DataDiNasciata + Environment.NewLine;
+            "Data di Nascita : " + DataDiNasciata.ToString("D") + Environment.NewLine;
         }
 
     }

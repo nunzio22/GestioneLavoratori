@@ -33,9 +33,9 @@ namespace GestioneLavoratori
         /// <returns>ritorna una stringa con i dettagli lavoratore dipendente</returns>
         public override string ToString()
         {
-            return base.ToString() +
-                "Stipendio Mensile percepito : " + StipendioNet + "$" + Environment.NewLine +
-                "Data di assunzione : " + DataAssunzione + Environment.NewLine;
+            return (base.ToString() +
+                "Stipendio Mensile percepito : " + StipendioNet.ToString("C") + Environment.NewLine +
+                "Data di assunzione : " + DataAssunzione.ToString("D") + Environment.NewLine).Replace('€', '$');
         }
         /// <summary>
         /// ovveride del metodo dettagli stipendio del oggeto lavoratore dipendente
@@ -43,8 +43,8 @@ namespace GestioneLavoratori
         /// <returns>ritorna una stringa con i dettagli stipendio del oggeto</returns>
         public override string GetDettaglioStipendio()
         {
-            return base.GetDettaglioStipendio()+ 
-                StipendioNet+"$" + Environment.NewLine;
+            return (base.GetDettaglioStipendio()+ 
+                StipendioNet.ToString("C") + Environment.NewLine).Replace('€', '$');
         }
         /// <summary>
         /// calcolo tasse in base allo stipendio

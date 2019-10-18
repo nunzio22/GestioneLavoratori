@@ -34,8 +34,8 @@ namespace GestioneLavoratori
         /// <returns>ritorna una stringa con i dettagli stipendio del oggeto</returns>
         public override string GetDettaglioStipendio()
         {
-            return base.GetDettaglioStipendio()+
-                StipendioNet + "$" + Environment.NewLine;
+            return (base.GetDettaglioStipendio()+
+                StipendioNet.ToString("C")  + Environment.NewLine).Replace('€', '$');
         }
         /// <summary>
         /// ovveride del metodo to string del oggeto lavoratore autonomo
@@ -43,9 +43,11 @@ namespace GestioneLavoratori
         /// <returns>ritorna una stringa con i dettagli lavoratore autonomo</returns>
         public override string ToString()
         {
-            return base.ToString() +
-                "Stipendio Mensile percepito : " + StipendioNet + "$" + Environment.NewLine +
+            string c= base.ToString() +
+                "Stipendio Mensile percepito : " + StipendioNet.ToString("C") + Environment.NewLine +
                 "Dipendenti assunti : " + DipendentiAssunti + Environment.NewLine;
+            c = c.Replace('€', '$');
+            return c;
         }
         /// <summary>
         /// calcolo tasse in base allo stipendio
