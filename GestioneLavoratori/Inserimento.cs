@@ -47,12 +47,12 @@ namespace GestioneLavoratori
                         {
                             lav[i] = new LavoratoreDipendete();
                             //solo per aggiungere lo spazio alla fine della crazione
-                            Console.WriteLine("");
+                            Console.WriteLine(string.Empty);
                         }
                         else if (tem == "2" || tem == "LAVORATORE AUTONOMO")
                         {
                             lav[i] = new LavoratoreAutonomo();
-                            Console.WriteLine("");
+                            Console.WriteLine(string.Empty);
                         }
 
                         lav[i].Nome = nome;
