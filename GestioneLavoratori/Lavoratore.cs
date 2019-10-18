@@ -52,7 +52,7 @@ namespace GestioneLavoratori
             "Data di Nascita : " + DataDiNasciata.ToString("") + Environment.NewLine;
         }
 
-        public  int CompareTo(object obj)
+        public virtual int CompareTo(object obj)
         {
             if (obj == null)
                 return 1;

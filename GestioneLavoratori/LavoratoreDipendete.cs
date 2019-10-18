@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestioneLavoratori
 {
-    class LavoratoreDipendete : Lavoratore
+    class LavoratoreDipendete : Lavoratore 
     {
         public int StipendioLord
         {
@@ -64,3 +64,4 @@ namespace GestioneLavoratori
         }
     }
 }
+
