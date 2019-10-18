@@ -61,6 +61,7 @@ namespace GestioneLavoratori
                 else if (ric == "3")
                 {
                     Ricerca.OrdinamentoSti(lav);
+                    Ricerca.Lettura(lav);
                 }
                 else if (ric == "4")
                 {

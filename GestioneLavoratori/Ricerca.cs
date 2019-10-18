@@ -24,52 +24,18 @@ namespace GestioneLavoratori
             }
         }
         /// <summary>
-        /// stampa in ordine di stipendio i dettagli stipendio
+        /// stampa in ordine ed ordina i lavoratori di stipendio i dettagli stipendio
         /// </summary>
         /// <param name="lav">arrey lavoratori</param>
-        //stampa tutti i dettagli stipendio in ordine di stipendio annuoale piu alto 
-        public static void OrdinamentoSti(Lavoratore [] lav)
+        public static void OrdinamentoSti(Lavoratore[] lav)
         {
-            //chiama la funzio che mi restituisce un arrey con lo stipendio annuale in ordine
-            int[] ord = OrdiStip(lav);
-            for (int i = 0; i < ord.Length; i++)
-            {
-                    for (int y = 0; y < lav.Length; y++)
-                    {
-                        if (!(lav[y] == null))
-                        {
-                                //stampo in ordiene di ord i vari dettagli stipendio
-                            if(ord[i]==lav[y].StipendioAnn)
-                            Console.WriteLine(lav[y].GetDettaglioStipendio());
-                    }
-              }
-            }
+            Array.Sort(lav);
+            Ricerca.Lettura(lav);
         }
-        /// <summary>
-        /// mi crea un arrey di int con dentro gli stipendi degli utenti 
-        /// </summary>
-        /// <param name="lav">arrey lavoratori</param>
-        /// <returns>L'arrey di stipendi</returns>
-        private static int[] OrdiStip(Lavoratore [] lav)
-        {
-            //mi salva il numero di oggetti al intetno del arrey e creo un arrey indi int di quella lunghezza
-            int indi = Inserimento.Libero(lav);
-
-            int[] ord=new int [indi];
-            //do come valore dei elemenri ord il vallore dello stipendio annuaole
-            for (int y  = 0; y < ord.Length; y++)
-            {
-                    ord[y] = lav[y].StipendioAnn;
-            }
-            //faccio una sorte di distint sul arrey
-            ord = ord.Distinct().ToArray();
-            Array.Sort(ord);
-            return ord;
-        }
-        /// <summary>
-        /// mi stampa i dettagli sipendio ordinati per data di assunzione
-        /// </summary>
-        /// <param name="lav">arrey lavoratori</param>
+            /// <summary>
+            /// mi stampa i dettagli sipendio ordinati per data di assunzione
+            /// </summary>
+            /// <param name="lav">arrey lavoratori</param>
         public static void OrdinamentoAnn(Lavoratore[] lav)
         {
             // arrey oggetto lavoratore dipendente popolato con il for

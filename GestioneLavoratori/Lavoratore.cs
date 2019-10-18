@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestioneLavoratori
 {
-    abstract class Lavoratore
+    abstract class Lavoratore :IComparable
     {
         public string Nome { get; set; }
         public string Cognome { get; set; }
@@ -49,8 +49,24 @@ namespace GestioneLavoratori
             return "Nome : " + Nome + Environment.NewLine +
             "Cognome : " + Cognome + Environment.NewLine +
             "Età : " + Età + Environment.NewLine +
-            "Data di Nascita : " + DataDiNasciata.ToString("D") + Environment.NewLine;
+            "Data di Nascita : " + DataDiNasciata.ToString("") + Environment.NewLine;
         }
 
+        public  int CompareTo(object obj)
+        {
+            if (obj == null)
+                return 1;
+            int ris;
+            Lavoratore newLav = obj as Lavoratore;
+            if (newLav != null)
+            {
+                ris = StipendioAnn.CompareTo(newLav.StipendioAnn);
+            }
+            else
+            {
+                throw new ArgumentException("L'oggetto da comparare non è una persona");
+            }
+            return ris;
+        }
     }
 }
